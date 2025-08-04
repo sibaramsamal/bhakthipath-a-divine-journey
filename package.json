@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "node deploy.js"
+    "deploy": "gh-pages -d dist --no-remove"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
