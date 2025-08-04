@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BhaktiPath - Divine Temple Design System 
+All colors MUST be HSL for spiritual harmony.
+*/
+
+@layer base {
+  :root {
+    /* Sacred Temple Colors */
+    --background: 45 60% 98%;
+    --foreground: 25 35% 15%;
+
+    /* Divine Cards & Surfaces */
+    --card: 45 50% 96%;
+    --card-foreground: 25 35% 15%;
+
+    --popover: 45 50% 96%;
+    --popover-foreground: 25 35% 15%;
+
+    /* Sacred Saffron Primary */
+    --primary: 35 85% 55%;
+    --primary-foreground: 45 60% 98%;
+
+    /* Temple Stone Secondary */
+    --secondary: 40 35% 90%;
+    --secondary-foreground: 25 35% 15%;
+
+    /* Muted Temple Tones */
+    --muted: 40 25% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Golden Accent */
+    --accent: 45 90% 70%;
+    --accent-foreground: 25 35% 15%;
+
+    /* Sacred Red for Actions */
+    --destructive: 5 85% 55%;
+    --destructive-foreground: 45 60% 98%;
+
+    /* Temple Borders */
+    --border: 40 20% 85%;
+    --input: 40 20% 85%;
+    --ring: 35 85% 55%;
+
+    /* Temple Architecture */
+    --radius: 0.75rem;
+
+    /* Custom Spiritual Colors */
+    --saffron: 35 85% 55%;
+    --sandalwood: 40 35% 85%;
+    --maroon: 5 60% 35%;
+    --lotus-pink: 330 60% 85%;
+    --sacred-gold: 45 90% 70%;
+    --divine-blue: 220 60% 60%;
+    
+    /* Gradients for Divine Atmosphere */
+    --temple-gradient: linear-gradient(135deg, hsl(45 60% 95%), hsl(35 40% 88%));
+    --saffron-gradient: linear-gradient(135deg, hsl(35 85% 55%), hsl(45 80% 65%));
+    --divine-glow: 0 8px 32px hsl(35 85% 55% / 0.3);
+    --sacred-shadow: 0 4px 20px hsl(25 35% 15% / 0.15);
+    
+    /* Animations */
+    --divine-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --sacred-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Evening Temple Atmosphere */
+    --background: 25 25% 8%;
+    --foreground: 45 60% 95%;
+
+    --card: 25 30% 12%;
+    --card-foreground: 45 60% 95%;
+
+    --popover: 25 30% 12%;
+    --popover-foreground: 45 60% 95%;
+
+    --primary: 35 85% 60%;
+    --primary-foreground: 25 25% 8%;
+
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 45 60% 95%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 40 25% 70%;
+
+    --accent: 45 90% 75%;
+    --accent-foreground: 25 25% 8%;
+
+    --destructive: 5 85% 60%;
+    --destructive-foreground: 45 60% 95%;
+
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 35 85% 60%;
+    
+    --sidebar-background: 25 30% 10%;
+    --sidebar-foreground: 45 40% 85%;
+    --sidebar-primary: 35 85% 60%;
+    --sidebar-primary-foreground: 25 25% 8%;
+    --sidebar-accent: 25 20% 15%;
+    --sidebar-accent-foreground: 45 40% 85%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: 35 85% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--temple-gradient);
+    min-height: 100vh;
+  }
+  
+  /* Divine scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Sacred Animations */
+  .divine-glow {
+    box-shadow: var(--divine-glow);
+  }
+  
+  .sacred-shadow {
+    box-shadow: var(--sacred-shadow);
+  }
+  
+  .temple-gradient {
+    background: var(--temple-gradient);
+  }
+  
+  .saffron-gradient {
+    background: var(--saffron-gradient);
+  }
+  
+  .divine-transition {
+    transition: var(--divine-transition);
+  }
+  
+  /* Spiritual Animations */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .pulse-divine {
+    animation: pulse-divine 2s ease-in-out infinite;
+  }
+  
+  .offerings-float {
+    animation: offerings-float 3s ease-in-out infinite;
+  }
+  
+  /* Sacred Typography */
+  .sanskrit-text {
+    font-family: 'Noto Sans Devanagari', serif;
+    font-weight: 400;
+  }
+  
+  .divine-title {
+    background: var(--saffron-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Typewriter effect */
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid hsl(var(--primary));
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom spiritual utilities */
+  .text-saffron {
+    color: hsl(var(--saffron));
+  }
+  
+  .text-sandalwood {
+    color: hsl(var(--sandalwood));
+  }
+  
+  .text-maroon {
+    color: hsl(var(--maroon));
+  }
+  
+  .text-sacred-gold {
+    color: hsl(var(--sacred-gold));
+  }
+  
+  .bg-saffron {
+    background-color: hsl(var(--saffron));
+  }
+  
+  .bg-sandalwood {
+    background-color: hsl(var(--sandalwood));
+  }
+  
+  .bg-maroon {
+    background-color: hsl(var(--maroon));
+  }
+  
+  .border-saffron {
+    border-color: hsl(var(--saffron));
+  }
+}
+
+/* Keyframe Animations for Divine Experience */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-divine {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes offerings-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-2deg);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(var(--primary));
+  }
+}
+
+/* Incense smoke animation */
+@keyframes smoke {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.incense-smoke {
+  animation: smoke 8s ease-in-out infinite;
+}
